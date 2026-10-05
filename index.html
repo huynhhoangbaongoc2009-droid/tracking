@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smiski Study Corner - IELTS & Tasks for High Schoolers</title>
+  <title>Smiski Study Corner - IELTS & Tasks</title>
   <!-- Google Fonts: Playfair Display (Canva Style) & Nunito -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -19,16 +19,16 @@
         extend: {
           colors: {
             smiski: {
-              main: '#78C850',      /* Màu xanh Smiski chủ đạo */
-              light: '#E8F8E5',     /* Nền xanh nhạt */
-              dark: '#4D9627',      /* Xanh lục đậm */
-              glow: '#D2F5C5',      /* Xanh dạ quang */
-              accent: '#FFB6C1',    /* Hồng pastel điểm nhấn */
-              pinklight: '#FFF0F5', /* Nền hồng nhạt */
+              main: '#78C850',      /* Green Main */
+              light: '#E8F8E5',     /* Light Green Background */
+              dark: '#4D9627',      /* Dark Green */
+              glow: '#D2F5C5',      /* Glowing Light */
+              accent: '#FFB6C1',    /* Pink Accent */
+              pinklight: '#FFF0F5', /* Light Pink Background */
             }
           },
           fontFamily: {
-            title: ['"Playfair Display"', 'serif'],
+            canva: ['"Playfair Display"', 'serif'],
             body: ['"Nunito"', 'sans-serif'],
           }
         }
@@ -43,25 +43,24 @@
       color: #2D3748;
     }
     .font-canva-title {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-family: 'Playfair Display', serif !important;
+      font-style: italic !important;
     }
-    /* Smiski Floating Decorative Images */
+    /* Smiski Floating Decorative Effects */
     .smiski-float {
       animation: float 4s ease-in-out infinite;
-      filter: drop-shadow(0 8px 12px rgba(120, 200, 80, 0.25));
+      filter: drop-shadow(0 6px 10px rgba(120, 200, 80, 0.3));
     }
     @keyframes float {
       0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(2deg); }
+      50% { transform: translateY(-8px) rotate(3deg); }
       100% { transform: translateY(0px) rotate(0deg); }
     }
     .glass-card {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(8px);
       border: 2px solid #D2F5C5;
     }
-    /* Scrollbar tùy chỉnh */
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -76,35 +75,83 @@
 </head>
 <body class="min-h-screen relative pb-16 overflow-x-hidden">
 
-  <!-- HÌNH ẢNH SMISKI TRANG TRÍ XUNG QUANH TRANG WEB -->
-  <!-- Smiski Ôm Mèo góc trên bên trái -->
-  <img src="https://lh3.googleusercontent.com/d/1O0-Jc0RIs2K2X35GkpxbS1c8o1vC5M0Y=w500" class="smiski-float fixed top-16 -left-6 w-28 md:w-36 z-40 pointer-events-none transform -rotate-12" alt="Smiski Cat">
-  <!-- Smiski Lắc Vòng góc trên bên phải -->
-  <img src="https://lh3.googleusercontent.com/d/1B0q4W0C4l7e4sU4Z-9-0zO4sX-E08fA4=w500" class="smiski-float fixed top-28 -right-6 w-28 md:w-36 z-40 pointer-events-none transform rotate-12" style="animation-delay: 1.5s;" alt="Smiski Hula">
-  <!-- Smiski Đeo Kính góc dưới bên trái -->
-  <img src="https://lh3.googleusercontent.com/d/1S38K5e3cWdD4W-X9_gZgW6eZp0eZp0eZ=w500" class="smiski-float fixed bottom-12 left-4 w-24 md:w-32 z-40 pointer-events-none" style="animation-delay: 2.5s;" alt="Smiski Glasses">
-  <!-- Smiski Đội Nón Cây góc dưới bên phải -->
-  <img src="https://lh3.googleusercontent.com/d/1Q4W0C4l7e4sU4Z-9-0zO4sX-E08fA4W=w500" class="smiski-float fixed bottom-8 right-6 w-24 md:w-32 z-40 pointer-events-none transform -rotate-6" style="animation-delay: 0.8s;" alt="Smiski Plant">
+  <!-- HÌNH ẢNH SMISKI DECORATION BẰNG SVG HOẠT HÌNH (KHÔNG BAO GIỜ LỖI LINK) -->
+  
+  <!-- Smiski Ôm Mèo (Góc Trên Bên Trái) -->
+  <div class="smiski-float fixed top-16 -left-2 z-40 pointer-events-none w-24 md:w-32 transform -rotate-12">
+    <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="40" rx="30" ry="28" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
+      <circle cx="40" cy="36" r="3" fill="#333"/>
+      <circle cx="60" cy="36" r="3" fill="#333"/>
+      <ellipse cx="50" cy="46" rx="4" ry="2" fill="#666"/>
+      <path d="M30 65 Q50 60 70 65 L65 110 Q50 115 35 110 Z" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
+      <!-- Con mèo nhỏ trên đầu -->
+      <path d="M42 12 Q50 5 58 12 L56 20 L44 20 Z" fill="#D2F5C5" stroke="#78C850" stroke-width="1.5"/>
+      <circle cx="47" cy="15" r="1" fill="#333"/>
+      <circle cx="53" cy="15" r="1" fill="#333"/>
+    </svg>
+  </div>
+
+  <!-- Smiski Lắc Vòng (Góc Trên Bên Phải) -->
+  <div class="smiski-float fixed top-24 -right-2 z-40 pointer-events-none w-24 md:w-32 transform rotate-12" style="animation-delay: 1.5s;">
+    <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="35" rx="28" ry="26" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
+      <circle cx="40" cy="32" r="3" fill="#333"/>
+      <circle cx="60" cy="32" r="3" fill="#333"/>
+      <ellipse cx="50" cy="42" rx="4" ry="2" fill="#666"/>
+      <path d="M35 58 Q50 55 65 58 L62 105 Q50 110 38 105 Z" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
+      <!-- Vòng Hula -->
+      <ellipse cx="50" cy="72" rx="40" ry="10" fill="none" stroke="#78C850" stroke-width="5"/>
+    </svg>
+  </div>
+
+  <!-- Smiski Đeo Kính Đọc Sách (Góc Dưới Bên Trái) -->
+  <div class="smiski-float fixed bottom-12 left-4 z-40 pointer-events-none w-24 md:w-28" style="animation-delay: 2.5s;">
+    <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="40" rx="28" ry="26" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
+      <circle cx="40" cy="38" r="3" fill="#333"/>
+      <circle cx="60" cy="38" r="3" fill="#333"/>
+      <!-- Kính mắt -->
+      <rect x="28" y="30" width="18" height="14" rx="3" fill="none" stroke="#4D9627" stroke-width="2.5"/>
+      <rect x="54" y="30" width="18" height="14" rx="3" fill="none" stroke="#4D9627" stroke-width="2.5"/>
+      <line x1="46" y1="36" x2="54" y2="36" stroke="#4D9627" stroke-width="2.5"/>
+      <!-- Thân & Sách -->
+      <path d="M35 62 L65 62 L60 110 L40 110 Z" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
+      <path d="M30 75 Q50 65 70 75 L65 95 Q50 88 35 95 Z" fill="#78C850"/>
+    </svg>
+  </div>
+
+  <!-- Smiski Đội Nón Cây (Góc Dưới Bên Phải) -->
+  <div class="smiski-float fixed bottom-8 right-4 z-40 pointer-events-none w-24 md:w-28 transform -rotate-6" style="animation-delay: 0.8s;">
+    <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="45" rx="28" ry="26" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
+      <circle cx="40" cy="42" r="3" fill="#333"/>
+      <circle cx="60" cy="42" r="3" fill="#333"/>
+      <!-- Nón lá/cây -->
+      <path d="M50 5 L65 25 L35 25 Z" fill="#78C850"/>
+      <path d="M35 68 Q50 62 65 68 L60 112 Q50 115 40 112 Z" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
+    </svg>
+  </div>
 
   <!-- HEADER TRANG WEB -->
   <header class="bg-gradient-to-r from-smiski-light via-white to-smiski-pinklight border-b-4 border-smiski-main py-6 px-4 mb-8 shadow-sm">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-4 text-center md:text-left">
-        <div class="relative">
-          <img src="https://lh3.googleusercontent.com/d/1O0-Jc0RIs2K2X35GkpxbS1c8o1vC5M0Y=w500" class="w-16 h-16 object-contain rounded-full bg-smiski-glow p-1 border-2 border-smiski-main" alt="Smiski Logo">
+        <div class="w-14 h-14 bg-smiski-glow rounded-full flex items-center justify-center border-2 border-smiski-main shadow-sm">
+          <span class="text-2xl">🌱</span>
         </div>
         <div>
           <h1 class="font-canva-title text-3xl md:text-5xl font-bold text-smiski-dark tracking-wide">
             Smiski Study Corner
           </h1>
-          <p class="text-sm md:text-base text-gray-600 font-medium">Góc Học Tập & Ôn Thi IELTS Cho Học Sinh Cuối Cấp 🎓</p>
+          <p class="text-sm md:text-base text-gray-600 font-semibold">Góc Học Tập & Ôn Thi IELTS Cho Học Sinh Cuối Cấp 🎓</p>
         </div>
       </div>
       
       <!-- GEMINI API KEY INPUT -->
       <div class="glass-card p-3 rounded-2xl flex items-center gap-2 shadow-inner w-full md:w-auto">
         <i class="fa-solid fa-key text-smiski-main text-lg"></i>
-        <input type="password" id="apiKeyInput" placeholder="Nhập Gemini API Key..." class="bg-transparent border-none text-sm focus:outline-none w-full md:w-48 text-gray-700">
+        <input type="password" id="apiKeyInput" placeholder="Nhập Gemini API Key..." class="bg-transparent border-none text-sm focus:outline-none w-full md:w-48 text-gray-700 font-bold">
         <button onclick="saveApiKey()" class="bg-smiski-main hover:bg-smiski-dark text-white text-xs font-bold py-2 px-3 rounded-xl transition-all shadow-sm">
           Lưu Key
         </button>
@@ -137,10 +184,10 @@
       <div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg relative">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 border-b border-smiski-glow pb-4">
           <div>
-            <h2 class="font-canva-title text-2xl md:text-3xl text-smiski-dark font-bold flex items-center gap-3">
+            <h2 class="font-canva-title text-2xl md:text-4xl text-smiski-dark font-bold flex items-center gap-3">
               <i class="fa-solid fa-calendar-check text-smiski-main"></i> Lịch Trình Học Tập Hàng Ngày
             </h2>
-            <p class="text-sm text-gray-500">Đặt mục tiêu và hoàn thành nhiệm vụ từng ngày cùng Smiski!</p>
+            <p class="text-sm text-gray-500 font-semibold mt-1">Đặt mục tiêu và hoàn thành nhiệm vụ từng ngày cùng Smiski!</p>
           </div>
           <input type="date" id="todoDate" onchange="loadTasks()" class="border-2 border-smiski-main rounded-xl p-2 font-bold text-smiski-dark bg-white shadow-sm focus:outline-none">
         </div>
@@ -158,7 +205,7 @@
 
         <!-- Nhập task mới -->
         <div class="flex gap-2 mb-6">
-          <input type="text" id="newTaskInput" placeholder="Ví dụ: Giải 1 đề Reading Cam 18, Học 20 từ vựng..." class="flex-1 border-2 border-gray-200 focus:border-smiski-main rounded-2xl p-3 text-sm focus:outline-none bg-white shadow-sm">
+          <input type="text" id="newTaskInput" placeholder="Ví dụ: Giải 1 đề Reading Cam 18, Học 20 từ vựng..." class="flex-1 border-2 border-gray-200 focus:border-smiski-main rounded-2xl p-3 text-sm focus:outline-none bg-white shadow-sm font-semibold">
           <button onclick="addTask()" class="bg-smiski-main hover:bg-smiski-dark text-white font-bold px-6 py-3 rounded-2xl shadow-md transition-all">
             + Thêm
           </button>
@@ -174,20 +221,20 @@
     <!-- SECTION 2: AI IELTS WRITING GRADER -->
     <section id="tab-writing" class="tab-content hidden">
       <div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg">
-        <h2 class="font-canva-title text-2xl md:text-3xl text-smiski-dark font-bold mb-2 flex items-center gap-3">
+        <h2 class="font-canva-title text-2xl md:text-4xl text-smiski-dark font-bold mb-2 flex items-center gap-3">
           <i class="fa-solid fa-feather text-smiski-main"></i> AI Sửa & Chấm Bài Writing IELTS
         </h2>
-        <p class="text-sm text-gray-600 mb-6">Chấm điểm chi tiết theo 4 tiêu chí chuẩn IELTS: Task Achievement, Coherence & Cohesion, Lexical Resource, Grammatical Range & Accuracy.</p>
+        <p class="text-sm text-gray-600 mb-6 font-semibold">Chấm điểm chi tiết theo 4 tiêu chí chuẩn IELTS: TR, CC, LR, GRA.</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="space-y-4">
             <div>
               <label class="block text-xs font-bold text-gray-600 mb-1">Đề bài (Prompt):</label>
-              <textarea id="writingPrompt" rows="3" placeholder="Nhập đề bài IELTS Writing Task 1 hoặc Task 2..." class="w-full p-3 border-2 border-smiski-glow rounded-2xl text-sm focus:outline-none focus:border-smiski-main bg-white"></textarea>
+              <textarea id="writingPrompt" rows="3" placeholder="Nhập đề bài IELTS Writing Task 1 hoặc Task 2..." class="w-full p-3 border-2 border-smiski-glow rounded-2xl text-sm focus:outline-none focus:border-smiski-main bg-white font-semibold"></textarea>
             </div>
             <div>
               <label class="block text-xs font-bold text-gray-600 mb-1">Bài làm của bạn (Essay):</label>
-              <textarea id="writingEssay" rows="10" placeholder="Dán bài viết của bạn vào đây..." class="w-full p-3 border-2 border-smiski-glow rounded-2xl text-sm focus:outline-none focus:border-smiski-main bg-white"></textarea>
+              <textarea id="writingEssay" rows="10" placeholder="Dán bài viết của bạn vào đây..." class="w-full p-3 border-2 border-smiski-glow rounded-2xl text-sm focus:outline-none focus:border-smiski-main bg-white font-semibold"></textarea>
             </div>
             <button onclick="gradeWriting()" id="btnGradeWriting" class="w-full bg-smiski-main hover:bg-smiski-dark text-white font-bold py-3 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2">
               <i class="fa-solid fa-wand-magic-sparkles"></i> AI Chấm & Sửa Bài
@@ -197,21 +244,21 @@
           <!-- Kết quả chấm -->
           <div id="writingResult" class="bg-white rounded-2xl p-5 border-2 border-smiski-glow shadow-inner min-h-[350px] overflow-y-auto">
             <div class="text-center text-gray-400 py-12">
-              <img src="https://lh3.googleusercontent.com/d/1S38K5e3cWdD4W-X9_gZgW6eZp0eZp0eZ=w500" class="w-20 mx-auto opacity-50 mb-2" alt="Smiski">
-              <p class="text-sm">Nhập bài viết và bấm nút để AI chấm điểm nhé!</p>
+              <span class="text-4xl block mb-2">📝</span>
+              <p class="text-sm font-semibold">Nhập bài viết và bấm nút để AI chấm điểm nhé!</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: AI IELTS SPEAKING SIMULATOR (VỚI GIỌNG NÓI MÍCH TRỰC TIẾP) -->
+    <!-- SECTION 3: AI IELTS SPEAKING SIMULATOR -->
     <section id="tab-speaking" class="tab-content hidden">
       <div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg">
-        <h2 class="font-canva-title text-2xl md:text-3xl text-smiski-dark font-bold mb-2 flex items-center gap-3">
+        <h2 class="font-canva-title text-2xl md:text-4xl text-smiski-dark font-bold mb-2 flex items-center gap-3">
           <i class="fa-solid fa-comments text-smiski-main"></i> AI IELTS Speaking Examiner (Nói Trực Tiếp)
         </h2>
-        <p class="text-sm text-gray-600 mb-6">Chọn Part, nói trực tiếp qua Micro. AI sẽ nghe, chấm Band Score & gợi ý bài mẫu!</p>
+        <p class="text-sm text-gray-600 mb-6 font-semibold">Chọn Part, nói trực tiếp qua Micro. AI sẽ nghe, chấm Band Score & gợi ý bài mẫu!</p>
 
         <div class="flex flex-wrap gap-3 mb-6">
           <button onclick="loadSpeakingTopic(1)" class="bg-smiski-light hover:bg-smiski-glow border border-smiski-main text-smiski-dark font-bold py-2 px-4 rounded-xl text-sm">
@@ -242,7 +289,7 @@
             <span id="recordStatus" class="text-xs font-bold text-gray-500">Nhấn nút Micro đỏ để bắt đầu nói...</span>
           </div>
 
-          <textarea id="speakingTranscript" rows="4" placeholder="Nội dung nói của bạn sẽ tự động hiển thị ở đây (hoặc bạn có thể tự gõ)..." class="w-full p-3 border-2 border-smiski-glow rounded-2xl text-sm focus:outline-none focus:border-smiski-main bg-white"></textarea>
+          <textarea id="speakingTranscript" rows="4" placeholder="Nội dung nói của bạn sẽ tự động hiển thị ở đây..." class="w-full p-3 border-2 border-smiski-glow rounded-2xl text-sm focus:outline-none focus:border-smiski-main bg-white font-semibold"></textarea>
           
           <button onclick="analyzeSpeaking()" class="w-full bg-smiski-main hover:bg-smiski-dark text-white font-bold py-3 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2">
             <i class="fa-solid fa-paper-plane"></i> Gửi Câu Trả Lời Cho AI Chấm
@@ -251,18 +298,18 @@
 
         <!-- Kết quả Speaking -->
         <div id="speakingResult" class="bg-white rounded-2xl p-5 border-2 border-smiski-glow shadow-inner min-h-[150px]">
-          <p class="text-sm text-gray-400 text-center py-4">Kết quả nhận xét Speaking sẽ hiển thị tại đây.</p>
+          <p class="text-sm text-gray-400 text-center py-4 font-semibold">Kết quả nhận xét Speaking sẽ hiển thị tại đây.</p>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4: QUẢN LÝ ĐIỂM READING & LISTENING LOG -->
+    <!-- SECTION 4: LOGS READING & LISTENING -->
     <section id="tab-logs" class="tab-content hidden">
       <div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg">
-        <h2 class="font-canva-title text-2xl md:text-3xl text-smiski-dark font-bold mb-2 flex items-center gap-3">
+        <h2 class="font-canva-title text-2xl md:text-4xl text-smiski-dark font-bold mb-2 flex items-center gap-3">
           <i class="fa-solid fa-chart-simple text-smiski-main"></i> Nhật Ký Đề Test Reading & Listening
         </h2>
-        <p class="text-sm text-gray-600 mb-6">Theo dõi kết quả làm bài test, số câu đúng và thời gian hoàn thành.</p>
+        <p class="text-sm text-gray-600 mb-6 font-semibold">Theo dõi kết quả làm bài test, số câu đúng và thời gian hoàn thành.</p>
 
         <!-- Form nhập test -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 mb-6 bg-white p-4 rounded-2xl border border-smiski-glow shadow-sm">
@@ -275,15 +322,15 @@
           </div>
           <div>
             <label class="block text-xs font-bold text-gray-600 mb-1">Tên đề test:</label>
-            <input type="text" id="logTitle" placeholder="Cam 18 Test 1" class="w-full border p-2 rounded-xl text-sm border-gray-200">
+            <input type="text" id="logTitle" placeholder="Cam 18 Test 1" class="w-full border p-2 rounded-xl text-sm font-semibold border-gray-200">
           </div>
           <div>
             <label class="block text-xs font-bold text-gray-600 mb-1">Số câu đúng (/40):</label>
-            <input type="number" id="logScore" max="40" min="0" placeholder="32" class="w-full border p-2 rounded-xl text-sm border-gray-200">
+            <input type="number" id="logScore" max="40" min="0" placeholder="32" class="w-full border p-2 rounded-xl text-sm font-semibold border-gray-200">
           </div>
           <div>
             <label class="block text-xs font-bold text-gray-600 mb-1">Thời gian làm (Phút):</label>
-            <input type="number" id="logTime" placeholder="55" class="w-full border p-2 rounded-xl text-sm border-gray-200">
+            <input type="number" id="logTime" placeholder="55" class="w-full border p-2 rounded-xl text-sm font-semibold border-gray-200">
           </div>
           <div class="flex items-end">
             <button onclick="addScoreLog()" class="w-full bg-smiski-main hover:bg-smiski-dark text-white font-bold py-2 rounded-xl transition-all text-sm">
@@ -292,7 +339,7 @@
           </div>
         </div>
 
-        <!-- Bảng hiển thị lịch sử -->
+        <!-- Bảng hiển thị -->
         <div class="overflow-x-auto bg-white rounded-2xl border border-smiski-glow shadow-sm">
           <table class="w-full text-left border-collapse">
             <thead>
@@ -314,22 +361,22 @@
       </div>
     </section>
 
-    <!-- SECTION 5: AI LỘ TRÌNH ÔN THI DỰA TRÊN AIM & LỊCH SỬ -->
+    <!-- SECTION 5: AI LỘ TRÌNH ÔN THI -->
     <section id="tab-advisor" class="tab-content hidden">
       <div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg">
-        <h2 class="font-canva-title text-2xl md:text-3xl text-smiski-dark font-bold mb-2 flex items-center gap-3">
+        <h2 class="font-canva-title text-2xl md:text-4xl text-smiski-dark font-bold mb-2 flex items-center gap-3">
           <i class="fa-solid fa-compass-drafting text-smiski-main"></i> AI Phân Tích & Tư Vấn Lộ Trình Cải Thiện
         </h2>
-        <p class="text-sm text-gray-600 mb-6">Nhập Target Aim của bạn, Gemini AI sẽ đọc toàn bộ dữ liệu làm bài và đưa ra chiến lược tối ưu nhất!</p>
+        <p class="text-sm text-gray-600 mb-6 font-semibold">Nhập Target Aim của bạn, Gemini AI sẽ đọc dữ liệu và lập chiến lược ôn tập!</p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 bg-white p-5 rounded-2xl border border-smiski-glow">
           <div>
             <label class="block text-xs font-bold text-gray-600 mb-1">Mục tiêu Band Score (Aim):</label>
-            <input type="text" id="aimBand" placeholder="7.0 Overall (R: 7.5, L: 7.5, W: 6.5, S: 6.5)" class="w-full border-2 border-smiski-glow p-2.5 rounded-xl text-sm font-bold text-smiski-dark">
+            <input type="text" id="aimBand" placeholder="7.0 Overall" class="w-full border-2 border-smiski-glow p-2.5 rounded-xl text-sm font-bold text-smiski-dark">
           </div>
           <div>
-            <label class="block text-xs font-bold text-gray-600 mb-1">Thời gian còn lại đến ngày thi:</label>
-            <input type="text" id="timeRemaining" placeholder="3 Tháng (Hoặc 60 Ngày)" class="w-full border-2 border-smiski-glow p-2.5 rounded-xl text-sm font-bold text-smiski-dark">
+            <label class="block text-xs font-bold text-gray-600 mb-1">Thời gian còn lại:</label>
+            <input type="text" id="timeRemaining" placeholder="3 Tháng" class="w-full border-2 border-smiski-glow p-2.5 rounded-xl text-sm font-bold text-smiski-dark">
           </div>
           <div class="flex items-end">
             <button onclick="generateStrategy()" id="btnGenerateStrategy" class="w-full bg-smiski-main hover:bg-smiski-dark text-white font-bold py-2.5 rounded-xl transition-all shadow-md text-sm flex items-center justify-center gap-2">
@@ -338,19 +385,17 @@
           </div>
         </div>
 
-        <div id="strategyResult" class="bg-white rounded-2xl p-6 border-2 border-smiski-glow shadow-inner min-h-[250px]">
+        <div id="strategyResult" class="bg-white rounded-2xl p-6 border-2 border-smiski-glow shadow-inner min-h-[200px]">
           <div class="text-center text-gray-400 py-8">
-            <img src="https://lh3.googleusercontent.com/d/1Q4W0C4l7e4sU4Z-9-0zO4sX-E08fA4W=w500" class="w-20 mx-auto opacity-50 mb-2" alt="Smiski Advisor">
-            <p class="text-sm">Hãy điền Target Aim và nhấn nút để nhận lộ trình ôn tập cá nhân hóa từ AI nhé!</p>
+            <span class="text-4xl block mb-2">💡</span>
+            <p class="text-sm font-semibold">Hãy điền Target Aim và nhấn nút để nhận lộ trình ôn tập nhé!</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- JAVASCRIPT CODE -->
   <script>
-    // --- KHỞI TẠO VÀ DỮ LIỆU LOCALSTORAGE ---
     document.getElementById('todoDate').valueAsDate = new Date();
     let currentApiKey = localStorage.getItem('smiski_gemini_key') || '';
     if (currentApiKey) document.getElementById('apiKeyInput').value = currentApiKey;
@@ -362,7 +407,6 @@
       alert('Đã lưu Gemini API Key thành công!');
     }
 
-    // --- ĐIỀU HƯỚNG TABS ---
     function switchTab(tabName) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -379,10 +423,7 @@
       if (tabName === 'logs') loadLogsTable();
     }
 
-    // --- 1. QUẢN LÝ TO-DO LIST ---
-    function getTasksKey() {
-      return `tasks_${document.getElementById('todoDate').value}`;
-    }
+    function getTasksKey() { return `tasks_${document.getElementById('todoDate').value}`; }
 
     function loadTasks() {
       const tasks = JSON.parse(localStorage.getItem(getTasksKey()) || '[]');
@@ -434,7 +475,6 @@
       loadTasks();
     }
 
-    // --- GỌI GEMINI AI API ---
     async function callGemini(promptText) {
       if (!currentApiKey) {
         alert('Vui lòng nhập Gemini API Key ở góc trên màn hình trước!');
@@ -454,7 +494,6 @@
       }
     }
 
-    // --- 2. AI WRITING GRADER ---
     async function gradeWriting() {
       const prompt = document.getElementById('writingPrompt').value;
       const essay = document.getElementById('writingEssay').value;
@@ -465,20 +504,10 @@
       btn.innerText = 'Đang chấm bài...';
       btn.disabled = true;
 
-      const aiPrompt = `Bạn là một Giám khảo IELTS Chuyên nghiệp. Hãy chấm bài IELTS Writing sau theo 4 tiêu chí chuẩn IELTS:
-      1. Task Achievement / Response
-      2. Coherence and Cohesion
-      3. Lexical Resource
-      4. Grammatical Range and Accuracy
-
+      const aiPrompt = `Chấm bài IELTS Writing sau theo 4 tiêu chí chuẩn IELTS:
       Đề bài: ${prompt}
       Bài làm: ${essay}
-
-      Hãy trả về kết quả định dạng HTML (dùng Tailwind CSS đơn giản):
-      - Đánh giá Band điểm từng tiêu chí & Overall Band Score.
-      - Nhận xét chi tiết điểm mạnh/điểm yếu.
-      - Sửa lỗi sai ngữ pháp/từ vựng trực tiếp trong bài.
-      - Bài mẫu viết lại nâng cấp lên Band 8.0+.`;
+      Trả về định dạng HTML ngắn gọn: Band Score từng tiêu chí, nhận xét và bài sửa mẫu Band 8.0+.`;
 
       const result = await callGemini(aiPrompt);
       if (result) {
@@ -488,7 +517,6 @@
       btn.disabled = false;
     }
 
-    // --- 3. AI SPEAKING VỚI THU ÂM GIỌNG NÓI ---
     let recognition;
     let isRecording = false;
 
@@ -508,7 +536,7 @@
     }
 
     function toggleRecord() {
-      if (!recognition) return alert('Trình duyệt của bạn không hỗ trợ thu âm!');
+      if (!recognition) return alert('Trình duyệt không hỗ trợ micro thu âm!');
       const btn = document.getElementById('recordBtn');
       const status = document.getElementById('recordStatus');
 
@@ -516,19 +544,19 @@
         recognition.start();
         isRecording = true;
         btn.classList.add('animate-pulse', 'bg-red-700');
-        status.innerText = 'Đang lắng nghe giọng nói tiếng Anh của bạn... (Bấm nút đỏ để dừng)';
+        status.innerText = 'Đang lắng nghe giọng nói tiếng Anh của bạn...';
       } else {
         recognition.stop();
         isRecording = false;
         btn.classList.remove('animate-pulse', 'bg-red-700');
-        status.innerText = 'Đã dừng thu âm. Kiểm tra lại văn bản bên dưới.';
+        status.innerText = 'Đã dừng thu âm.';
       }
     }
 
     const speakingTopics = {
-      1: "Part 1: Let's talk about your hometown. What do you like most about the place where you grew up? Do you think it is a good place for young people to live?",
-      2: "Part 2 Cue Card: Describe a challenging project or task you completed in high school. You should say: what it was, how you completed it, what difficulties you faced, and explain how you felt after finishing it.",
-      3: "Part 3: In what ways has artificial intelligence impacted high school education today? Do you think AI will replace human teachers in the future?"
+      1: "Part 1: Let's talk about your hometown. What do you like most about the place where you grew up?",
+      2: "Part 2 Cue Card: Describe a challenging project or task you completed in high school.",
+      3: "Part 3: In what ways has artificial intelligence impacted high school education today?"
     };
 
     function loadSpeakingTopic(part) {
@@ -542,16 +570,12 @@
       if (!transcript.trim()) return alert('Vui lòng nói hoặc gõ câu trả lời!');
 
       const resultDiv = document.getElementById('speakingResult');
-      resultDiv.innerHTML = '<p class="text-sm text-smiski-dark font-bold text-center">AI Giám khảo đang phân tích câu trả lời của bạn...</p>';
+      resultDiv.innerHTML = '<p class="text-sm text-smiski-dark font-bold text-center">AI đang phân tích bài nói...</p>';
 
-      const aiPrompt = `Bạn là Giám khảo IELTS Speaking. Hãy đánh giá bài nói này theo 4 tiêu chí IELTS Speaking (Fluency, Lexical Resource, Grammar, Pronunciation/Expression):
+      const aiPrompt = `Đánh giá bài IELTS Speaking theo 4 tiêu chí chuẩn IELTS:
       Câu hỏi: ${question}
-      Bài trả lời (transcript): ${transcript}
-
-      Trả về định dạng HTML ngắn gọn:
-      - Ước tính Band Score Speaking.
-      - Sửa lỗi từ vựng/ngữ pháp/diễn đạt.
-      - Đưa ra Sample Answer Band 8.0+ cho câu hỏi này.`;
+      Bài nói: ${transcript}
+      Trả về HTML: Band Score, sửa lỗi và Sample Answer Band 8.0+.`;
 
       const result = await callGemini(aiPrompt);
       if (result) {
@@ -559,16 +583,10 @@
       }
     }
 
-    // --- 4. LOGS READING & LISTENING ---
-    function calculateBand(score, skill) {
-      if (score >= 39) return '9.0';
-      if (score >= 37) return '8.5';
-      if (score >= 35) return '8.0';
-      if (score >= 33) return '7.5';
+    function calculateBand(score) {
+      if (score >= 35) return '8.0+';
       if (score >= 30) return '7.0';
-      if (score >= 27) return '6.5';
       if (score >= 23) return '6.0';
-      if (score >= 19) return '5.5';
       return '5.0-';
     }
 
@@ -578,20 +596,16 @@
       const score = parseInt(document.getElementById('logScore').value);
       const time = document.getElementById('logTime').value;
 
-      if (!title || isNaN(score) || !time) return alert('Vui lòng nhập đủ thông tin bài test!');
+      if (!title || isNaN(score) || !time) return alert('Vui lòng nhập đủ thông tin!');
 
       const logs = JSON.parse(localStorage.getItem('smiski_ielts_logs') || '[]');
       logs.unshift({
         date: new Date().toLocaleDateString('vi-VN'),
-        skill, title, score, time,
-        band: calculateBand(score, skill)
+        skill, title, score, time, band: calculateBand(score)
       });
 
       localStorage.setItem('smiski_ielts_logs', JSON.stringify(logs));
       loadLogsTable();
-      document.getElementById('logTitle').value = '';
-      document.getElementById('logScore').value = '';
-      document.getElementById('logTime').value = '';
     }
 
     function loadLogsTable() {
@@ -600,14 +614,14 @@
       tbody.innerHTML = '';
 
       if (logs.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="7" class="text-center py-4 text-gray-400">Chưa có kết quả test nào được ghi lại.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="7" class="text-center py-4 text-gray-400 font-semibold">Chưa có kết quả test nào.</td></tr>';
         return;
       }
 
       logs.forEach((log, index) => {
         tbody.innerHTML += `
-          <tr class="hover:bg-smiski-light/50 transition-all">
-            <td class="p-3 font-semibold text-gray-600">${log.date}</td>
+          <tr class="hover:bg-smiski-light/50 transition-all font-semibold">
+            <td class="p-3 text-gray-600">${log.date}</td>
             <td class="p-3 font-bold ${log.skill === 'Reading' ? 'text-green-600' : 'text-blue-600'}">${log.skill}</td>
             <td class="p-3 font-bold">${log.title}</td>
             <td class="p-3 font-bold">${log.score}/40</td>
@@ -628,26 +642,20 @@
       loadLogsTable();
     }
 
-    // --- 5. AI STRATEGY ADVISOR ---
     async function generateStrategy() {
       const aim = document.getElementById('aimBand').value;
       const time = document.getElementById('timeRemaining').value;
       const logs = localStorage.getItem('smiski_ielts_logs') || '[]';
 
-      if (!aim || !time) return alert('Vui lòng nhập Aim Band và thời gian còn lại!');
+      if (!aim || !time) return alert('Vui lòng nhập Aim Band và Thời gian!');
 
       const btn = document.getElementById('btnGenerateStrategy');
       const resultDiv = document.getElementById('strategyResult');
       btn.innerText = 'AI Đang Phân Tích...';
       btn.disabled = true;
 
-      const aiPrompt = `Bạn là Cố vấn Luyện thi IELTS Chuyên nghiệp dành cho Học sinh Cuối cấp.
-      Thông tin học sinh:
-      - Mục tiêu (Aim Band): ${aim}
-      - Thời gian thi còn lại: ${time}
-      - Lịch sử thi Reading & Listening gần đây: ${logs}
-
-      Hãy phân tích điểm mạnh, điểm yếu dựa trên lịch sử điểm số và lập chiến lược chi tiết theo tuần giúp học sinh đạt được Aim Band. Viết bằng tiếng Việt, trình bày dạng HTML đẹp mắt.`;
+      const aiPrompt = `Lập lộ trình ôn IELTS chi tiết dựa trên:
+      Mục tiêu: ${aim}, Thời gian: ${time}, Lịch sử điểm: ${logs}. Viết định dạng HTML.`;
 
       const result = await callGemini(aiPrompt);
       if (result) {
@@ -657,7 +665,6 @@
       btn.disabled = false;
     }
 
-    // Khởi tạo trang ban đầu
     loadTasks();
   </script>
 </body>
