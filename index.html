@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smiski Study Corner - IELTS & Tasks</title>
-  <!-- Google Fonts: Playfair Display (Canva Style) & Nunito -->
+  <!-- Google Fonts: Quicksand & Nunito -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -18,17 +18,16 @@
       theme: {
         extend: {
           colors: {
-            smiski: {
+            study: {
               main: '#78C850',      /* Green Main */
               light: '#E8F8E5',     /* Light Green Background */
-              dark: '#4D9627',      /* Dark Green */
+              dark: '#3B7A1C',      /* Dark Green */
               glow: '#D2F5C5',      /* Glowing Light */
-              accent: '#FFB6C1',    /* Pink Accent */
-              pinklight: '#FFF0F5', /* Light Pink Background */
+              accent: '#83C5BE',
             }
           },
           fontFamily: {
-            canva: ['"Playfair Display"', 'serif'],
+            title: ['"Fredoka"', 'cursive', 'sans-serif'],
             body: ['"Nunito"', 'sans-serif'],
           }
         }
@@ -39,28 +38,36 @@
   <style>
     body {
       font-family: 'Nunito', sans-serif;
-      background-color: #F4FAF2;
+      /* Background lấp lánh pastel xanh lá */
+      background-image: url('https://i.ibb.co/3sS7L7z/sparkle-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       color: #2D3748;
     }
-    .font-canva-title {
-      font-family: 'Playfair Display', serif !important;
-      font-style: italic !important;
+    
+    .font-custom-title {
+      font-family: 'Fredoka', cursive, sans-serif !important;
     }
-    /* Smiski Floating Decorative Effects */
-    .smiski-float {
-      animation: float 4s ease-in-out infinite;
-      filter: drop-shadow(0 6px 10px rgba(120, 200, 80, 0.3));
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(210, 245, 197, 0.8);
     }
-    @keyframes float {
+
+    /* Hiệu ứng trôi nhẹ cho con mèo */
+    .cat-float {
+      animation: catFloat 4s ease-in-out infinite;
+      filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
+    }
+
+    @keyframes catFloat {
       0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-8px) rotate(3deg); }
+      50% { transform: translateY(-6px) rotate(1.5deg); }
       100% { transform: translateY(0px) rotate(0deg); }
     }
-    .glass-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
-      border: 2px solid #D2F5C5;
-    }
+
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -75,84 +82,30 @@
 </head>
 <body class="min-h-screen relative pb-16 overflow-x-hidden">
 
-  <!-- HÌNH ẢNH SMISKI DECORATION BẰNG SVG HOẠT HÌNH (KHÔNG BAO GIỜ LỖI LINK) -->
-  
-  <!-- Smiski Ôm Mèo (Góc Trên Bên Trái) -->
-  <div class="smiski-float fixed top-16 -left-2 z-40 pointer-events-none w-24 md:w-32 transform -rotate-12">
-    <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="50" cy="40" rx="30" ry="28" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
-      <circle cx="40" cy="36" r="3" fill="#333"/>
-      <circle cx="60" cy="36" r="3" fill="#333"/>
-      <ellipse cx="50" cy="46" rx="4" ry="2" fill="#666"/>
-      <path d="M30 65 Q50 60 70 65 L65 110 Q50 115 35 110 Z" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
-      <!-- Con mèo nhỏ trên đầu -->
-      <path d="M42 12 Q50 5 58 12 L56 20 L44 20 Z" fill="#D2F5C5" stroke="#78C850" stroke-width="1.5"/>
-      <circle cx="47" cy="15" r="1" fill="#333"/>
-      <circle cx="53" cy="15" r="1" fill="#333"/>
-    </svg>
-  </div>
-
-  <!-- Smiski Lắc Vòng (Góc Trên Bên Phải) -->
-  <div class="smiski-float fixed top-24 -right-2 z-40 pointer-events-none w-24 md:w-32 transform rotate-12" style="animation-delay: 1.5s;">
-    <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="50" cy="35" rx="28" ry="26" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
-      <circle cx="40" cy="32" r="3" fill="#333"/>
-      <circle cx="60" cy="32" r="3" fill="#333"/>
-      <ellipse cx="50" cy="42" rx="4" ry="2" fill="#666"/>
-      <path d="M35 58 Q50 55 65 58 L62 105 Q50 110 38 105 Z" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
-      <!-- Vòng Hula -->
-      <ellipse cx="50" cy="72" rx="40" ry="10" fill="none" stroke="#78C850" stroke-width="5"/>
-    </svg>
-  </div>
-
-  <!-- Smiski Đeo Kính Đọc Sách (Góc Dưới Bên Trái) -->
-  <div class="smiski-float fixed bottom-12 left-4 z-40 pointer-events-none w-24 md:w-28" style="animation-delay: 2.5s;">
-    <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="50" cy="40" rx="28" ry="26" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
-      <circle cx="40" cy="38" r="3" fill="#333"/>
-      <circle cx="60" cy="38" r="3" fill="#333"/>
-      <!-- Kính mắt -->
-      <rect x="28" y="30" width="18" height="14" rx="3" fill="none" stroke="#4D9627" stroke-width="2.5"/>
-      <rect x="54" y="30" width="18" height="14" rx="3" fill="none" stroke="#4D9627" stroke-width="2.5"/>
-      <line x1="46" y1="36" x2="54" y2="36" stroke="#4D9627" stroke-width="2.5"/>
-      <!-- Thân & Sách -->
-      <path d="M35 62 L65 62 L60 110 L40 110 Z" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
-      <path d="M30 75 Q50 65 70 75 L65 95 Q50 88 35 95 Z" fill="#78C850"/>
-    </svg>
-  </div>
-
-  <!-- Smiski Đội Nón Cây (Góc Dưới Bên Phải) -->
-  <div class="smiski-float fixed bottom-8 right-4 z-40 pointer-events-none w-24 md:w-28 transform -rotate-6" style="animation-delay: 0.8s;">
-    <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="50" cy="45" rx="28" ry="26" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
-      <circle cx="40" cy="42" r="3" fill="#333"/>
-      <circle cx="60" cy="42" r="3" fill="#333"/>
-      <!-- Nón lá/cây -->
-      <path d="M50 5 L65 25 L35 25 Z" fill="#78C850"/>
-      <path d="M35 68 Q50 62 65 68 L60 112 Q50 115 40 112 Z" fill="#E2F7CE" stroke="#78C850" stroke-width="2"/>
-    </svg>
+  <!-- HÌNH CON MÈO Sylvanian ĐEO KÍNH THỰC TẾ 100% Ở GÓC TRÊN BÊN PHẢI -->
+  <div class="cat-float fixed top-2 right-4 md:right-10 z-40 pointer-events-none w-32 md:w-48">
+    <img src="https://i.ibb.co/JqK7vX6/cat-glasses.png" alt="Sylvanian Cat" class="w-full h-auto object-contain">
   </div>
 
   <!-- HEADER TRANG WEB -->
-  <header class="bg-gradient-to-r from-smiski-light via-white to-smiski-pinklight border-b-4 border-smiski-main py-6 px-4 mb-8 shadow-sm">
+  <header class="bg-white/80 backdrop-blur-md border-b-4 border-study-main py-6 px-4 mb-8 shadow-sm">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-4 text-center md:text-left">
-        <div class="w-14 h-14 bg-smiski-glow rounded-full flex items-center justify-center border-2 border-smiski-main shadow-sm">
-          <span class="text-2xl">🌱</span>
+        <div class="w-12 h-12 bg-study-glow rounded-full flex items-center justify-center border-2 border-study-main shadow-sm">
+          <span class="text-2xl">🍀</span>
         </div>
         <div>
-          <h1 class="font-canva-title text-3xl md:text-5xl font-bold text-smiski-dark tracking-wide">
+          <h1 class="font-custom-title text-3xl md:text-5xl font-bold text-study-dark tracking-wide">
             Smiski Study Corner
           </h1>
-          <p class="text-sm md:text-base text-gray-600 font-semibold">Góc Học Tập & Ôn Thi IELTS Cho Học Sinh Cuối Cấp 🎓</p>
         </div>
       </div>
       
       <!-- GEMINI API KEY INPUT -->
-      <div class="glass-card p-3 rounded-2xl flex items-center gap-2 shadow-inner w-full md:w-auto">
-        <i class="fa-solid fa-key text-smiski-main text-lg"></i>
+      <div class="glass-card p-3 rounded-2xl flex items-center gap-2 shadow-inner w-full md:w-auto mr-0 md:mr-36">
+        <i class="fa-solid fa-key text-study-main text-lg"></i>
         <input type="password" id="apiKeyInput" placeholder="Nhập Gemini API Key..." class="bg-transparent border-none text-sm focus:outline-none w-full md:w-48 text-gray-700 font-bold">
-        <button onclick="saveApiKey()" class="bg-smiski-main hover:bg-smiski-dark text-white text-xs font-bold py-2 px-3 rounded-xl transition-all shadow-sm">
+        <button onclick="saveApiKey()" class="bg-study-main hover:bg-study-dark text-white text-xs font-bold py-2 px-3 rounded-xl transition-all shadow-sm">
           Lưu Key
         </button>
       </div>
@@ -162,19 +115,19 @@
   <!-- THANH ĐIỀU HƯỚNG TÍNH NĂNG (NAVIGATION TABS) -->
   <main class="max-w-6xl mx-auto px-4">
     <nav class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
-      <button onclick="switchTab('todo')" id="btn-todo" class="tab-btn active bg-smiski-main text-white font-bold py-3 px-5 rounded-2xl shadow-md transition-all flex items-center gap-2">
+      <button onclick="switchTab('todo')" id="btn-todo" class="tab-btn active bg-study-main text-white font-bold py-3 px-5 rounded-2xl shadow-md transition-all flex items-center gap-2">
         <i class="fa-solid fa-list-check"></i> To-Do Theo Ngày
       </button>
-      <button onclick="switchTab('writing')" id="btn-writing" class="tab-btn bg-white hover:bg-smiski-light text-smiski-dark border-2 border-smiski-glow font-bold py-3 px-5 rounded-2xl shadow-sm transition-all flex items-center gap-2">
+      <button onclick="switchTab('writing')" id="btn-writing" class="tab-btn bg-white hover:bg-study-light text-study-dark border-2 border-study-glow font-bold py-3 px-5 rounded-2xl shadow-sm transition-all flex items-center gap-2">
         <i class="fa-solid fa-pen-nib"></i> AI IELTS Writing
       </button>
-      <button onclick="switchTab('speaking')" id="btn-speaking" class="tab-btn bg-white hover:bg-smiski-light text-smiski-dark border-2 border-smiski-glow font-bold py-3 px-5 rounded-2xl shadow-sm transition-all flex items-center gap-2">
+      <button onclick="switchTab('speaking')" id="btn-speaking" class="tab-btn bg-white hover:bg-study-light text-study-dark border-2 border-study-glow font-bold py-3 px-5 rounded-2xl shadow-sm transition-all flex items-center gap-2">
         <i class="fa-solid fa-microphone-lines"></i> AI IELTS Speaking
       </button>
-      <button onclick="switchTab('logs')" id="btn-logs" class="tab-btn bg-white hover:bg-smiski-light text-smiski-dark border-2 border-smiski-glow font-bold py-3 px-5 rounded-2xl shadow-sm transition-all flex items-center gap-2">
+      <button onclick="switchTab('logs')" id="btn-logs" class="tab-btn bg-white hover:bg-study-light text-study-dark border-2 border-study-glow font-bold py-3 px-5 rounded-2xl shadow-sm transition-all flex items-center gap-2">
         <i class="fa-solid fa-book-open"></i> Reading & Listening Log
       </button>
-      <button onclick="switchTab('advisor')" id="btn-advisor" class="tab-btn bg-white hover:bg-smiski-light text-smiski-dark border-2 border-smiski-glow font-bold py-3 px-5 rounded-2xl shadow-sm transition-all flex items-center gap-2">
+      <button onclick="switchTab('advisor')" id="btn-advisor" class="tab-btn bg-white hover:bg-study-light text-study-dark border-2 border-study-glow font-bold py-3 px-5 rounded-2xl shadow-sm transition-all flex items-center gap-2">
         <i class="fa-solid fa-chart-line"></i> AI Lộ Trình Luyện Thi
       </button>
     </nav>
@@ -182,14 +135,14 @@
     <!-- SECTION 1: TO-DO LIST THEO NGÀY -->
     <section id="tab-todo" class="tab-content">
       <div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg relative">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 border-b border-smiski-glow pb-4">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 border-b border-study-glow pb-4">
           <div>
-            <h2 class="font-canva-title text-2xl md:text-4xl text-smiski-dark font-bold flex items-center gap-3">
-              <i class="fa-solid fa-calendar-check text-smiski-main"></i> Lịch Trình Học Tập Hàng Ngày
+            <h2 class="font-custom-title text-2xl md:text-3xl text-study-dark font-bold flex items-center gap-3">
+              <i class="fa-solid fa-calendar-check text-study-main"></i> Lịch Trình Học Tập Hàng Ngày
             </h2>
-            <p class="text-sm text-gray-500 font-semibold mt-1">Đặt mục tiêu và hoàn thành nhiệm vụ từng ngày cùng Smiski!</p>
+            <p class="text-sm text-gray-500 font-semibold mt-1">Đặt mục tiêu và hoàn thành nhiệm vụ từng ngày!</p>
           </div>
-          <input type="date" id="todoDate" onchange="loadTasks()" class="border-2 border-smiski-main rounded-xl p-2 font-bold text-smiski-dark bg-white shadow-sm focus:outline-none">
+          <input type="date" id="todoDate" onchange="loadTasks()" class="border-2 border-study-main rounded-xl p-2 font-bold text-study-dark bg-white shadow-sm focus:outline-none">
         </div>
 
         <!-- Thanh tiến độ -->
@@ -198,15 +151,15 @@
             <span>Tiến độ hoàn thành:</span>
             <span id="progressText">0%</span>
           </div>
-          <div class="w-full bg-gray-100 rounded-full h-3 border border-smiski-glow overflow-hidden">
-            <div id="progressBar" class="bg-gradient-to-r from-smiski-main to-smiski-dark h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+          <div class="w-full bg-gray-100 rounded-full h-3 border border-study-glow overflow-hidden">
+            <div id="progressBar" class="bg-gradient-to-r from-study-main to-study-dark h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
           </div>
         </div>
 
         <!-- Nhập task mới -->
         <div class="flex gap-2 mb-6">
-          <input type="text" id="newTaskInput" placeholder="Ví dụ: Giải 1 đề Reading Cam 18, Học 20 từ vựng..." class="flex-1 border-2 border-gray-200 focus:border-smiski-main rounded-2xl p-3 text-sm focus:outline-none bg-white shadow-sm font-semibold">
-          <button onclick="addTask()" class="bg-smiski-main hover:bg-smiski-dark text-white font-bold px-6 py-3 rounded-2xl shadow-md transition-all">
+          <input type="text" id="newTaskInput" placeholder="Ví dụ: Giải 1 đề Reading Cam 18, Học 20 từ vựng..." class="flex-1 border-2 border-gray-200 focus:border-study-main rounded-2xl p-3 text-sm focus:outline-none bg-white shadow-sm font-semibold">
+          <button onclick="addTask()" class="bg-study-main hover:bg-study-dark text-white font-bold px-6 py-3 rounded-2xl shadow-md transition-all">
             + Thêm
           </button>
         </div>
@@ -221,8 +174,8 @@
     <!-- SECTION 2: AI IELTS WRITING GRADER -->
     <section id="tab-writing" class="tab-content hidden">
       <div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg">
-        <h2 class="font-canva-title text-2xl md:text-4xl text-smiski-dark font-bold mb-2 flex items-center gap-3">
-          <i class="fa-solid fa-feather text-smiski-main"></i> AI Sửa & Chấm Bài Writing IELTS
+        <h2 class="font-custom-title text-2xl md:text-3xl text-study-dark font-bold mb-2 flex items-center gap-3">
+          <i class="fa-solid fa-feather text-study-main"></i> AI Sửa & Chấm Bài Writing IELTS
         </h2>
         <p class="text-sm text-gray-600 mb-6 font-semibold">Chấm điểm chi tiết theo 4 tiêu chí chuẩn IELTS: TR, CC, LR, GRA.</p>
 
@@ -230,19 +183,19 @@
           <div class="space-y-4">
             <div>
               <label class="block text-xs font-bold text-gray-600 mb-1">Đề bài (Prompt):</label>
-              <textarea id="writingPrompt" rows="3" placeholder="Nhập đề bài IELTS Writing Task 1 hoặc Task 2..." class="w-full p-3 border-2 border-smiski-glow rounded-2xl text-sm focus:outline-none focus:border-smiski-main bg-white font-semibold"></textarea>
+              <textarea id="writingPrompt" rows="3" placeholder="Nhập đề bài IELTS Writing Task 1 hoặc Task 2..." class="w-full p-3 border-2 border-study-glow rounded-2xl text-sm focus:outline-none focus:border-study-main bg-white font-semibold"></textarea>
             </div>
             <div>
               <label class="block text-xs font-bold text-gray-600 mb-1">Bài làm của bạn (Essay):</label>
-              <textarea id="writingEssay" rows="10" placeholder="Dán bài viết của bạn vào đây..." class="w-full p-3 border-2 border-smiski-glow rounded-2xl text-sm focus:outline-none focus:border-smiski-main bg-white font-semibold"></textarea>
+              <textarea id="writingEssay" rows="10" placeholder="Dán bài viết của bạn vào đây..." class="w-full p-3 border-2 border-study-glow rounded-2xl text-sm focus:outline-none focus:border-study-main bg-white font-semibold"></textarea>
             </div>
-            <button onclick="gradeWriting()" id="btnGradeWriting" class="w-full bg-smiski-main hover:bg-smiski-dark text-white font-bold py-3 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2">
+            <button onclick="gradeWriting()" id="btnGradeWriting" class="w-full bg-study-main hover:bg-study-dark text-white font-bold py-3 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2">
               <i class="fa-solid fa-wand-magic-sparkles"></i> AI Chấm & Sửa Bài
             </button>
           </div>
 
           <!-- Kết quả chấm -->
-          <div id="writingResult" class="bg-white rounded-2xl p-5 border-2 border-smiski-glow shadow-inner min-h-[350px] overflow-y-auto">
+          <div id="writingResult" class="bg-white rounded-2xl p-5 border-2 border-study-glow shadow-inner min-h-[350px] overflow-y-auto">
             <div class="text-center text-gray-400 py-12">
               <span class="text-4xl block mb-2">📝</span>
               <p class="text-sm font-semibold">Nhập bài viết và bấm nút để AI chấm điểm nhé!</p>
@@ -255,26 +208,26 @@
     <!-- SECTION 3: AI IELTS SPEAKING SIMULATOR -->
     <section id="tab-speaking" class="tab-content hidden">
       <div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg">
-        <h2 class="font-canva-title text-2xl md:text-4xl text-smiski-dark font-bold mb-2 flex items-center gap-3">
-          <i class="fa-solid fa-comments text-smiski-main"></i> AI IELTS Speaking Examiner (Nói Trực Tiếp)
+        <h2 class="font-custom-title text-2xl md:text-3xl text-study-dark font-bold mb-2 flex items-center gap-3">
+          <i class="fa-solid fa-comments text-study-main"></i> AI IELTS Speaking Examiner
         </h2>
         <p class="text-sm text-gray-600 mb-6 font-semibold">Chọn Part, nói trực tiếp qua Micro. AI sẽ nghe, chấm Band Score & gợi ý bài mẫu!</p>
 
         <div class="flex flex-wrap gap-3 mb-6">
-          <button onclick="loadSpeakingTopic(1)" class="bg-smiski-light hover:bg-smiski-glow border border-smiski-main text-smiski-dark font-bold py-2 px-4 rounded-xl text-sm">
+          <button onclick="loadSpeakingTopic(1)" class="bg-study-light hover:bg-study-glow border border-study-main text-study-dark font-bold py-2 px-4 rounded-xl text-sm">
             Part 1: Personal Questions
           </button>
-          <button onclick="loadSpeakingTopic(2)" class="bg-smiski-light hover:bg-smiski-glow border border-smiski-main text-smiski-dark font-bold py-2 px-4 rounded-xl text-sm">
+          <button onclick="loadSpeakingTopic(2)" class="bg-study-light hover:bg-study-glow border border-study-main text-study-dark font-bold py-2 px-4 rounded-xl text-sm">
             Part 2: Cue Card
           </button>
-          <button onclick="loadSpeakingTopic(3)" class="bg-smiski-light hover:bg-smiski-glow border border-smiski-main text-smiski-dark font-bold py-2 px-4 rounded-xl text-sm">
+          <button onclick="loadSpeakingTopic(3)" class="bg-study-light hover:bg-study-glow border border-study-main text-study-dark font-bold py-2 px-4 rounded-xl text-sm">
             Part 3: Deep Discussion
           </button>
         </div>
 
         <!-- Khung câu hỏi -->
-        <div class="bg-white rounded-2xl p-5 border-2 border-smiski-main mb-6 shadow-sm">
-          <span class="text-xs font-bold text-smiski-main uppercase tracking-wider block mb-1">Câu hỏi từ Giám khảo AI:</span>
+        <div class="bg-white rounded-2xl p-5 border-2 border-study-main mb-6 shadow-sm">
+          <span class="text-xs font-bold text-study-main uppercase tracking-wider block mb-1">Câu hỏi từ Giám khảo AI:</span>
           <p id="speakingQuestion" class="font-bold text-lg text-gray-800">
             Hãy chọn Part ở trên để bắt đầu nhận câu hỏi thi IELTS Speaking nhé!
           </p>
@@ -289,15 +242,15 @@
             <span id="recordStatus" class="text-xs font-bold text-gray-500">Nhấn nút Micro đỏ để bắt đầu nói...</span>
           </div>
 
-          <textarea id="speakingTranscript" rows="4" placeholder="Nội dung nói của bạn sẽ tự động hiển thị ở đây..." class="w-full p-3 border-2 border-smiski-glow rounded-2xl text-sm focus:outline-none focus:border-smiski-main bg-white font-semibold"></textarea>
+          <textarea id="speakingTranscript" rows="4" placeholder="Nội dung nói của bạn sẽ tự động hiển thị ở đây..." class="w-full p-3 border-2 border-study-glow rounded-2xl text-sm focus:outline-none focus:border-study-main bg-white font-semibold"></textarea>
           
-          <button onclick="analyzeSpeaking()" class="w-full bg-smiski-main hover:bg-smiski-dark text-white font-bold py-3 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2">
+          <button onclick="analyzeSpeaking()" class="w-full bg-study-main hover:bg-study-dark text-white font-bold py-3 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2">
             <i class="fa-solid fa-paper-plane"></i> Gửi Câu Trả Lời Cho AI Chấm
           </button>
         </div>
 
         <!-- Kết quả Speaking -->
-        <div id="speakingResult" class="bg-white rounded-2xl p-5 border-2 border-smiski-glow shadow-inner min-h-[150px]">
+        <div id="speakingResult" class="bg-white rounded-2xl p-5 border-2 border-study-glow shadow-inner min-h-[150px]">
           <p class="text-sm text-gray-400 text-center py-4 font-semibold">Kết quả nhận xét Speaking sẽ hiển thị tại đây.</p>
         </div>
       </div>
@@ -306,13 +259,13 @@
     <!-- SECTION 4: LOGS READING & LISTENING -->
     <section id="tab-logs" class="tab-content hidden">
       <div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg">
-        <h2 class="font-canva-title text-2xl md:text-4xl text-smiski-dark font-bold mb-2 flex items-center gap-3">
-          <i class="fa-solid fa-chart-simple text-smiski-main"></i> Nhật Ký Đề Test Reading & Listening
+        <h2 class="font-custom-title text-2xl md:text-3xl text-study-dark font-bold mb-2 flex items-center gap-3">
+          <i class="fa-solid fa-chart-simple text-study-main"></i> Nhật Ký Đề Test Reading & Listening
         </h2>
         <p class="text-sm text-gray-600 mb-6 font-semibold">Theo dõi kết quả làm bài test, số câu đúng và thời gian hoàn thành.</p>
 
         <!-- Form nhập test -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 mb-6 bg-white p-4 rounded-2xl border border-smiski-glow shadow-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 mb-6 bg-white p-4 rounded-2xl border border-study-glow shadow-sm">
           <div>
             <label class="block text-xs font-bold text-gray-600 mb-1">Kỹ năng:</label>
             <select id="logSkill" class="w-full border p-2 rounded-xl text-sm font-bold border-gray-200">
@@ -333,17 +286,17 @@
             <input type="number" id="logTime" placeholder="55" class="w-full border p-2 rounded-xl text-sm font-semibold border-gray-200">
           </div>
           <div class="flex items-end">
-            <button onclick="addScoreLog()" class="w-full bg-smiski-main hover:bg-smiski-dark text-white font-bold py-2 rounded-xl transition-all text-sm">
+            <button onclick="addScoreLog()" class="w-full bg-study-main hover:bg-study-dark text-white font-bold py-2 rounded-xl transition-all text-sm">
               + Lưu Kết Quả
             </button>
           </div>
         </div>
 
         <!-- Bảng hiển thị -->
-        <div class="overflow-x-auto bg-white rounded-2xl border border-smiski-glow shadow-sm">
+        <div class="overflow-x-auto bg-white rounded-2xl border border-study-glow shadow-sm">
           <table class="w-full text-left border-collapse">
             <thead>
-              <tr class="bg-smiski-light text-smiski-dark text-xs uppercase font-bold border-b border-smiski-glow">
+              <tr class="bg-study-light text-study-dark text-xs uppercase font-bold border-b border-study-glow">
                 <th class="p-3">Ngày</th>
                 <th class="p-3">Kỹ Năng</th>
                 <th class="p-3">Tên Đề</th>
@@ -364,28 +317,28 @@
     <!-- SECTION 5: AI LỘ TRÌNH ÔN THI -->
     <section id="tab-advisor" class="tab-content hidden">
       <div class="glass-card rounded-3xl p-6 md:p-8 shadow-lg">
-        <h2 class="font-canva-title text-2xl md:text-4xl text-smiski-dark font-bold mb-2 flex items-center gap-3">
-          <i class="fa-solid fa-compass-drafting text-smiski-main"></i> AI Phân Tích & Tư Vấn Lộ Trình Cải Thiện
+        <h2 class="font-custom-title text-2xl md:text-3xl text-study-dark font-bold mb-2 flex items-center gap-3">
+          <i class="fa-solid fa-compass-drafting text-study-main"></i> AI Phân Tích & Tư Vấn Lộ Trình Cải Thiện
         </h2>
         <p class="text-sm text-gray-600 mb-6 font-semibold">Nhập Target Aim của bạn, Gemini AI sẽ đọc dữ liệu và lập chiến lược ôn tập!</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 bg-white p-5 rounded-2xl border border-smiski-glow">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 bg-white p-5 rounded-2xl border border-study-glow">
           <div>
             <label class="block text-xs font-bold text-gray-600 mb-1">Mục tiêu Band Score (Aim):</label>
-            <input type="text" id="aimBand" placeholder="7.0 Overall" class="w-full border-2 border-smiski-glow p-2.5 rounded-xl text-sm font-bold text-smiski-dark">
+            <input type="text" id="aimBand" placeholder="7.0 Overall" class="w-full border-2 border-study-glow p-2.5 rounded-xl text-sm font-bold text-study-dark">
           </div>
           <div>
             <label class="block text-xs font-bold text-gray-600 mb-1">Thời gian còn lại:</label>
-            <input type="text" id="timeRemaining" placeholder="3 Tháng" class="w-full border-2 border-smiski-glow p-2.5 rounded-xl text-sm font-bold text-smiski-dark">
+            <input type="text" id="timeRemaining" placeholder="3 Tháng" class="w-full border-2 border-study-glow p-2.5 rounded-xl text-sm font-bold text-study-dark">
           </div>
           <div class="flex items-end">
-            <button onclick="generateStrategy()" id="btnGenerateStrategy" class="w-full bg-smiski-main hover:bg-smiski-dark text-white font-bold py-2.5 rounded-xl transition-all shadow-md text-sm flex items-center justify-center gap-2">
+            <button onclick="generateStrategy()" id="btnGenerateStrategy" class="w-full bg-study-main hover:bg-study-dark text-white font-bold py-2.5 rounded-xl transition-all shadow-md text-sm flex items-center justify-center gap-2">
               <i class="fa-solid fa-brain"></i> AI Lập Chiến Lược
             </button>
           </div>
         </div>
 
-        <div id="strategyResult" class="bg-white rounded-2xl p-6 border-2 border-smiski-glow shadow-inner min-h-[200px]">
+        <div id="strategyResult" class="bg-white rounded-2xl p-6 border-2 border-study-glow shadow-inner min-h-[200px]">
           <div class="text-center text-gray-400 py-8">
             <span class="text-4xl block mb-2">💡</span>
             <p class="text-sm font-semibold">Hãy điền Target Aim và nhấn nút để nhận lộ trình ôn tập nhé!</p>
@@ -410,14 +363,14 @@
     function switchTab(tabName) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('bg-smiski-main', 'text-white');
-        btn.classList.add('bg-white', 'text-smiski-dark');
+        btn.classList.remove('bg-study-main', 'text-white');
+        btn.classList.add('bg-white', 'text-study-dark');
       });
 
       document.getElementById(`tab-${tabName}`).classList.remove('hidden');
       const activeBtn = document.getElementById(`btn-${tabName}`);
-      activeBtn.classList.remove('bg-white', 'text-smiski-dark');
-      activeBtn.classList.add('bg-smiski-main', 'text-white');
+      activeBtn.classList.remove('bg-white', 'text-study-dark');
+      activeBtn.classList.add('bg-study-main', 'text-white');
 
       if (tabName === 'todo') loadTasks();
       if (tabName === 'logs') loadLogsTable();
@@ -434,9 +387,9 @@
       tasks.forEach((task, index) => {
         if (task.completed) completedCount++;
         taskList.innerHTML += `
-          <li class="flex items-center justify-between p-3 bg-white rounded-2xl border border-smiski-glow shadow-sm">
+          <li class="flex items-center justify-between p-3 bg-white/90 rounded-2xl border border-study-glow shadow-sm">
             <div class="flex items-center gap-3">
-              <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleTask(${index})" class="w-5 h-5 accent-smiski-main rounded cursor-pointer">
+              <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleTask(${index})" class="w-5 h-5 accent-study-main rounded cursor-pointer">
               <span class="${task.completed ? 'line-through text-gray-400' : 'text-gray-700 font-bold'} text-sm">${task.text}</span>
             </div>
             <button onclick="deleteTask(${index})" class="text-red-400 hover:text-red-600 text-xs px-2 py-1">
@@ -570,7 +523,7 @@
       if (!transcript.trim()) return alert('Vui lòng nói hoặc gõ câu trả lời!');
 
       const resultDiv = document.getElementById('speakingResult');
-      resultDiv.innerHTML = '<p class="text-sm text-smiski-dark font-bold text-center">AI đang phân tích bài nói...</p>';
+      resultDiv.innerHTML = '<p class="text-sm text-study-dark font-bold text-center">AI đang phân tích bài nói...</p>';
 
       const aiPrompt = `Đánh giá bài IELTS Speaking theo 4 tiêu chí chuẩn IELTS:
       Câu hỏi: ${question}
@@ -620,12 +573,12 @@
 
       logs.forEach((log, index) => {
         tbody.innerHTML += `
-          <tr class="hover:bg-smiski-light/50 transition-all font-semibold">
+          <tr class="hover:bg-study-light/50 transition-all font-semibold">
             <td class="p-3 text-gray-600">${log.date}</td>
             <td class="p-3 font-bold ${log.skill === 'Reading' ? 'text-green-600' : 'text-blue-600'}">${log.skill}</td>
             <td class="p-3 font-bold">${log.title}</td>
             <td class="p-3 font-bold">${log.score}/40</td>
-            <td class="p-3"><span class="bg-smiski-glow text-smiski-dark px-2 py-1 rounded-lg font-extrabold">${log.band}</span></td>
+            <td class="p-3"><span class="bg-study-glow text-study-dark px-2 py-1 rounded-lg font-extrabold">${log.band}</span></td>
             <td class="p-3 text-gray-600">${log.time} phút</td>
             <td class="p-3 text-center">
               <button onclick="deleteLog(${index})" class="text-red-400 hover:text-red-600"><i class="fa-solid fa-trash"></i></button>
